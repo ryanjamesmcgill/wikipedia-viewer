@@ -1,0 +1,10 @@
+[
+    { "value": "COUNT", "label": "Count" },
+    {  "value": "S1D0E", "label": "S1D0E" },
+    {  "value": "S1D0", "label": "S1D0" },
+    {  "value": "D0E", "label": "D0E" },
+    {  "value": "D0", "label": "D0" },
+    {  "value": "DD", "label": "DD" },
+    {  "value": "SimpleNormalCnt", "label": "SimpleNormalCnt" },
+    {  "value": "SimpleNormalCnt_nrd", "label": "SimpleNormalCnt_nrd" }
+]

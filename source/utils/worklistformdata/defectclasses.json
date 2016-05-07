@@ -1,0 +1,7 @@
+[
+    { "value": "01 - Pres Pc", "label": "01 - Pres Pc", "classid": "01", "classname": "PRES_PC" },
+    { "value": "02 - OX BG", "label": "02 - OX BG", "classid": "02", "classname": "OX_BG"  },
+    { "value": "03 - Depo PC", "label": "03 - Depo PC",  "classid": "03", "classname": "DEPO_PC"  },
+    { "value": "04 - Void", "label": "04 - Void", "classid": "04", "classname": "VOID"},
+    { "value": "05 - YIKES!", "label": "05 - YIKES!", "classid": "05", "classname": "YIKES"},
+]

@@ -1,0 +1,20 @@
+.article {
+    transition: background-color 0.4s ease;    
+}
+.article:hover{
+    background-color: #F0F8FF;
+    cursor: pointer;
+}
+
+#search-input {
+    font-family:'Source Sans Pro', sans-serif;
+    font-size: 50px;
+    height: 80px;
+}
+
+@media (max-width: 767px){
+    #search-input {
+    font-size: 32px;
+    height: 50px;
+    }
+}
