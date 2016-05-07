@@ -36934,6 +36934,9 @@ var Application = React.createClass({
 		this.setState({ searchString: text });
 		setTimeout(this.queryWiki, 400);
 	},
+	onClickRandom: function () {
+		window.open('https://en.wikipedia.org/wiki/Special:Random');
+	},
 	render: function () {
 		return React.createElement(
 			"div",
@@ -36943,7 +36946,17 @@ var Application = React.createClass({
 				{ className: "row" },
 				React.createElement(
 					"div",
-					{ style: formStyle, className: "col-md-12" },
+					{ style: formStyle, className: "col-sm-1" },
+					React.createElement("i", { className: "fa fa-random",
+						"aria-hidden": "true",
+						"data-toggle": "tooltip",
+						"data-placement": "bottom",
+						title: "Click for a random wikipedia article",
+						onClick: this.onClickRandom })
+				),
+				React.createElement(
+					"div",
+					{ style: formStyle, className: "col-sm-11" },
 					React.createElement(SearchBar, { queryWiki: this.queryWiki, onFormChange: this.onFormChange })
 				)
 			),
@@ -37013,7 +37026,11 @@ var Article = React.createClass({
                     'Last edited: ',
                     moment(dateStr).format('MMMM Do YYYY'),
                     ' -- ',
-                    moment(dateStr).fromNow()
+                    React.createElement(
+                        'span',
+                        { style: { color: "#40E0D0" } },
+                        moment(dateStr).fromNow()
+                    )
                 ),
                 React.createElement(
                     'p',
@@ -37055,6 +37072,7 @@ module.exports = Articles;
 
 },{"./Article.react":167,"react":164}],169:[function(require,module,exports){
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var searchBarStyle = {
     //font-size and height are in wikipedia-viewer.css
@@ -37068,10 +37086,10 @@ var searchBarStyle = {
 };
 
 var SearchBar = React.createClass({
-    displayName: "SearchBar",
+    displayName: 'SearchBar',
 
     componentDidMount: function () {
-        React.findDOMNode(this.refs.searchBox).focus();
+        ReactDOM.findDOMNode(this.refs.searchBox).focus();
     },
     _onSubmit: function (e) {
         e.preventDefault();
@@ -37079,17 +37097,17 @@ var SearchBar = React.createClass({
     },
     render: function () {
         return React.createElement(
-            "form",
+            'form',
             { onSubmit: this._onSubmit },
             React.createElement(
-                "div",
-                { className: "form-group" },
-                React.createElement("input", { style: searchBarStyle,
-                    ref: "searchBox",
-                    type: "text",
-                    className: "form-control",
-                    id: "search-input",
-                    placeholder: "search wikipedia...",
+                'div',
+                { className: 'form-group' },
+                React.createElement('input', { style: searchBarStyle,
+                    ref: 'searchBox',
+                    type: 'text',
+                    className: 'form-control',
+                    id: 'search-input',
+                    placeholder: 'search wikipedia...',
                     onChange: this.props.onFormChange })
             )
         );
@@ -37098,4 +37116,4 @@ var SearchBar = React.createClass({
 
 module.exports = SearchBar;
 
-},{"react":164}]},{},[165]);
+},{"react":164,"react-dom":8}]},{},[165]);
