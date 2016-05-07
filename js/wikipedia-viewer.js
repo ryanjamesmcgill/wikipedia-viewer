@@ -37070,6 +37070,9 @@ var searchBarStyle = {
 var SearchBar = React.createClass({
     displayName: "SearchBar",
 
+    componentDidMount: function () {
+        React.findDOMNode(this.refs.searchBox).focus();
+    },
     _onSubmit: function (e) {
         e.preventDefault();
         this.props.queryWiki();
@@ -37082,6 +37085,7 @@ var SearchBar = React.createClass({
                 "div",
                 { className: "form-group" },
                 React.createElement("input", { style: searchBarStyle,
+                    ref: "searchBox",
                     type: "text",
                     className: "form-control",
                     id: "search-input",
