@@ -12,6 +12,9 @@ var searchBarStyle = {
 };
     
 var SearchBar = React.createClass({
+    componentDidMount: function(){
+      React.findDOMNode(this.refs.searchBox).focus(); 
+    },
     _onSubmit: function(e){
         e.preventDefault();
         this.props.queryWiki();
@@ -21,6 +24,7 @@ var SearchBar = React.createClass({
 		<form onSubmit={this._onSubmit}>
 		<div className="form-group">
             <input style={searchBarStyle}
+                    ref="searchBox"
                     type="text" 
                     className="form-control" 
                     id="search-input" 
