@@ -101,11 +101,23 @@ var Application = React.createClass({
 		this.setState({searchString: text});
 		setTimeout(this.queryWiki, 400);
 	},
+	onClickRandom: function(){
+		window.open('https://en.wikipedia.org/wiki/Special:Random');
+	},
 	render: function(){
 		return ( 
 		<div className="container">
 		<div className="row">
-			<div style={formStyle} className="col-md-12">
+			<div style={formStyle} className="col-sm-1">
+				<i className="fa fa-random" 
+				aria-hidden="true" 
+				data-toggle="tooltip" 
+				data-placement="bottom" 
+				title="Click for a random wikipedia article"
+				onClick={this.onClickRandom}></i>
+			</div>
+			<div style={formStyle} className="col-sm-11">
+				
 				<SearchBar queryWiki={this.queryWiki} onFormChange={this.onFormChange}/>
 			</div>
 		</div>

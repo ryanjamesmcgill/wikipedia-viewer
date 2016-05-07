@@ -34,7 +34,7 @@ var Article = React.createClass({
                 <h3 style={{marginBottom:0}}>{this.props.data.title}</h3>
                 <p style={{fontWeight: 'lighter',
                             color: 'rgba(0,0,0,.5)'}}>
-                    Last edited: {moment(dateStr).format('MMMM Do YYYY')} -- {moment(dateStr).fromNow()}
+                    Last edited: {moment(dateStr).format('MMMM Do YYYY')} -- <span style={{color: "#40E0D0"}}>{moment(dateStr).fromNow()}</span>
                 </p>
                 <p>{this.props.data.summary}</p>
             </div>

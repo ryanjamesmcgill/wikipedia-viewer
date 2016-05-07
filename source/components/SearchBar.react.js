@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
     
 var searchBarStyle = {
     //font-size and height are in wikipedia-viewer.css
@@ -13,7 +14,7 @@ var searchBarStyle = {
     
 var SearchBar = React.createClass({
     componentDidMount: function(){
-      React.findDOMNode(this.refs.searchBox).focus(); 
+      ReactDOM.findDOMNode(this.refs.searchBox).focus(); 
     },
     _onSubmit: function(e){
         e.preventDefault();
